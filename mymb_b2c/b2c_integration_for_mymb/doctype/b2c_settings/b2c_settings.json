@@ -1,0 +1,51 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-02-24 05:02:07.215243",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "solr_url",
+  "image_uri"
+ ],
+ "fields": [
+  {
+   "fieldname": "solr_url",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Solr url",
+   "reqd": 1
+  },
+  {
+   "fieldname": "image_uri",
+   "fieldtype": "Data",
+   "label": "Image url",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2023-02-24 10:52:34.639560",
+ "modified_by": "Administrator",
+ "module": "B2C Integration for MyMb",
+ "name": "B2C Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -199,3 +199,10 @@ app_license = "MIT"
 # auth_hooks = [
 #	"mymb_b2c.auth.validate"
 # ]
+
+# Whitelist API endpoints
+# api_version = 1
+
+# api_whitelisted_methods = {
+# 	"mymb_b2c.b2c_integration_for_mymb.solr_search.catalogue": {"methods": ["GET","POST"], "roles": ["Guest"]}
+# }
