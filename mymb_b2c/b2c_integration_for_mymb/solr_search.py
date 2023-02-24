@@ -32,29 +32,25 @@ def get_image_uri_instance():
 
     return image_uri
 
-@frappe.whitelist(allow_guest=True)
+@frappe.whitelist(allow_guest=True, methods=['GET'])
 def catalogue(args=None):
-    # Get the "start" and "per_page" parameters from the JSON payload
-    if args is None:
-        args = {}
-   
-    per_page = args.get('per_page', 12)
-    page = args.get('page')
-    page = page - 1 if page is not None and page > 0 else 0
+    # Get the "start" and "per_page" parameters from the query string
+    per_page = int(frappe.local.request.args.get('per_page', 12) or 12 ) 
+    page = int(frappe.local.request.args.get('page') or 1)
+    page = page - 1 if page > 0 else 0
     start = page*per_page
-    text = args.get('text', '*')
+    text = frappe.local.request.args.get('text') or '*'
 
     # Construct the Solr query to search for text
     query = f'text:{text}'
 
-    order_by = args.get('order_by')
+    order_by = frappe.local.request.args.get('order_by')
 
     # Construct the Solr search parameters
     search_params = {
         'q': query,
         'start': start,
         'rows': per_page,
-
     }
 
     # Sort the search results based on the value of the "order_by" parameter
