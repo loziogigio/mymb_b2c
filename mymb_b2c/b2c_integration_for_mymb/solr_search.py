@@ -80,7 +80,7 @@ def catalogue(args=None):
     search_results_mapped = map_solr_response_b2c(search_results)
 
     # Construct the response
-    response = {
+    response =  {
         'totalCount': count,
         'current_page': page + 1,
         'pages': pages,
@@ -90,9 +90,11 @@ def catalogue(args=None):
         'solr_result' : search_results,
         'query': query
     }
+    return response
+
 
     # Return the response with HTTP 200 status
-    return response
+    # return response.values()
 
 
 def map_solr_response_b2c(search_results):
